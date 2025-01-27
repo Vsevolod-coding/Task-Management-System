@@ -23,7 +23,7 @@ mat-card-title {
     text-align: center;
     font-size: 32px;
     margin-bottom: 20px;
-    color: white;
+    color: rgb(63, 81, 181);
 }
 
 form {
@@ -56,4 +56,8 @@ mat-error {
     color: #ff5100 !important;
     font-weight: 200 !important;
     background-color: transparent;
+}
+
+mat-icon {
+    color: rgb(63, 81, 181);
 }
