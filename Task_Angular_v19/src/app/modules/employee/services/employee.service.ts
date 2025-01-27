@@ -16,7 +16,7 @@ export class EmployeeService {
       console.error('User ID is not available');
       return throwError(() => new Error('User ID is not set.'));
     }
-    return this.http.get(`http://localhost:8080/api/employee/tasks/${userId}`, httpOptions);
+    return this.http.get(`http://localhost:8080/api/employee/tasks/` + userId, httpOptions);
   }
 
   getTaskById(id: number): Observable<any> {

@@ -63,9 +63,9 @@ export class UpdateTaskComponent {
       console.log(res);
       if (res.id != null) {
         this.router.navigateByUrl("/admin/dashboard");
-        this.snackbar.open('Вы успешно обновили задачу!', 'Close', {duration: 5000});
+        this.snackbar.open('Вы успешно обновили задачу!', 'Закрыть', {duration: 5000});
       } else {
-        this.snackbar.open('Что-то пошло не так!', 'Error', {duration: 5000});
+        this.snackbar.open('Что-то пошло не так!', 'Закрыть', {duration: 5000});
       }
     })
   };

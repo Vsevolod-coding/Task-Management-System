@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit{
         next: (response) => {
           console.log(response);
           if (response && response.userId) {
-            this.snackbar.open("Вы успешно вошли в аккаунт!", "Закрыть", {duration: 5000});
             const user = {
               id: response.userId,
               role: response.userRole
@@ -58,6 +57,7 @@ export class LoginComponent implements OnInit{
             console.log(response.jwt);
             StorageService.saveUser(user);
             StorageService.saveToken(response.jwt);
+            this.snackbar.open("Вы успешно вошли в аккаунт!", "Закрыть", {duration: 5000});
             if(StorageService.isAdminLoggedIn()) {
               this.router.navigateByUrl("/admin/dashboard");
             } else if (StorageService.isEmployeeLoggedIn()) {

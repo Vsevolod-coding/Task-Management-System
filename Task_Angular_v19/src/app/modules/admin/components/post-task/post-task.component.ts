@@ -51,9 +51,9 @@ export class PostTaskComponent implements OnInit {
       console.log(res);
       if (res.id != null) {
         this.router.navigateByUrl("/admin/dashboard");
-        this.snackbar.open('Вы успешно опубликовали задачу!', 'Close', {duration: 5000});
+        this.snackbar.open('Вы успешно опубликовали задачу!', 'Закрыть', {duration: 5000});
       } else {
-        this.snackbar.open('Что-то пошло не так!', 'Error', {duration: 5000});
+        this.snackbar.open('Что-то пошло не так!', 'Закрыть', {duration: 5000});
       }
     })
   };

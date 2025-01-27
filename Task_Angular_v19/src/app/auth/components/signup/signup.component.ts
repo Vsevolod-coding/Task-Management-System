@@ -46,13 +46,16 @@ export class SignupComponent {
     if (password !== confirmPassword) {
       this.snackbar.open("Пароли не совпадают!", "Закрыть", { duration: 5000, panelClass: 'error-snackbar' });
       return;
+    } else if (password.length < 8) {
+      this.snackbar.open("Пароль должен состоять не менее, чем из 8 символов!", "Закрыть", { duration: 5000, panelClass: 'error-snackbar' });
+      return;
     }
 
     console.log(this.signupForm.value);
     this.service.signup(this.signupForm.value).subscribe((res) => {
       console.log(res);
       if (res.id != null) {
-        this.snackbar.open("Вы успешно зарегистрировались!", "Закрыть", { duration: 5000 });
+        this.snackbar.open("Вы успешно зарегистрировались! Войдите в аккаунт.", "Закрыть", { duration: 5000 });
         this.router.navigateByUrl("/login");
       } else {
         this.snackbar.open("Не получилось зарегистрироваться!", "Закрыть", { duration: 5000, panelClass:'error-snackbar' });

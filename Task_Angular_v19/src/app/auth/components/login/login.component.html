@@ -1,7 +1,7 @@
 <div class="container">
     <mat-card>
-        <mat-card-title>Log In Form</mat-card-title>
-        <mat-card-content>
+        <mat-card-title>Логин</mat-card-title>
+        <mat-card-content class="form-container">
             <form [formGroup]="loginForm">
 
                 <mat-form-field appearance="outline">
@@ -14,7 +14,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
+                    <mat-label>Пароль</mat-label>
                     <input matInput type="{{ hidePassword ? 'password' : 'text' }}"
                         required formControlName="password">
 
@@ -30,18 +30,17 @@
                 </mat-form-field>
 
                 <!-- Submit Button -->
-                <button mat-raised-button color="primary" type="submit" (click)="login()" [disabled]="loginForm.invalid">
-                    Log In
+                <button class="login-btn" mat-raised-button color="primary" type="submit" (click)="login()" [disabled]="loginForm.invalid">
+                    Войти
                 </button>
             </form>
         </mat-card-content>
 
         <mat-card-actions class="centered-actions">
-            <span>Нет аккаунта?</span>
-            <span>Зарегистрируйтесь :)</span>
-            <button mat-button class="mat-btn" routerLink="/register">
-                Sign Up
-            </button>
+            <span>Нет аккаунта? Зарегистрируйтесь :)</span>
         </mat-card-actions>        
+        <button mat-button class="mat-btn" routerLink="/register">
+            Зарегистрироваться
+        </button>
     </mat-card>
 </div>

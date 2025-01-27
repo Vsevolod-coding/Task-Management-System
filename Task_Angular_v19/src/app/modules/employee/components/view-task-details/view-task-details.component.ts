@@ -46,10 +46,10 @@ export class ViewTaskDetailsComponent {
     this.service.createComment(this.id, this.commentForm.get('content')?.value).subscribe((res) => {
       console.log(res);
       if (res.id != null) {
-        this.snackbar.open('Вы успешно опубликовали комментарий!', 'Close', {duration: 5000});
+        this.snackbar.open('Вы успешно опубликовали комментарий!', 'Закрыть', {duration: 5000});
         this.getCommentsByTaskId();
       } else {
-        this.snackbar.open('Что-то пошло не так!', 'Error', {duration: 5000});
+        this.snackbar.open('Что-то пошло не так!', 'Закрыть', {duration: 5000});
       }
     })
   };
